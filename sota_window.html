@@ -1,275 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
-	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-	<title>ФВиЗ - рабочее простанство</title>
-	<link rel="icon" href="styles/img/icon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="styles/colors.css">
-	<link rel="stylesheet" href="styles/honeycombs.css">
-	<link rel="stylesheet" href="styles/contextMenu.css">
-	<link rel="stylesheet" href="styles/navbar_footer.css">
-	<link rel="stylesheet" href="styles/int_popup.css">
-	<script src="scripts/screen.js"></script>
-	<script src="scripts/int_popup.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
-	<script>
-		function reloadValues() {
-			data = dataMix;
-			sortGK(data);
-			createTable("newf", data)
-		}
-		function saveValues() {
+    <title>ФВиЗ - рабочее простанство</title>
+    <link rel="icon" href="styles/img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/honeycombs.css">
+    <link rel="stylesheet" href="styles/contextMenu.css">
+    <link rel="stylesheet" href="styles/navbar_footer.css">
+    <link rel="stylesheet" href="styles/int_popup.css">
+    <link rel="stylesheet" href="styles/Pstyles.css">
+    <script src="scripts/screen.js"></script>
+    <script src="scripts/int_popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+    <script>
+        function reloadValues() {
+            data = dataMix;
+            sortGK(data);
+            createTable("newf", data)
+        }
+        function saveValues() {
             localStorage.setItem('testObject', JSON.stringify(data));
         }
-		function showMenuLevels() {
-			document.getElementById("moreLevels").hidden = false;
-		}
-	</script>
-	<script>
-		document.onmousedown = function (event) {
-			var tar = event.target;
-			if (tar.id != 'myfoto' && !tar.classList.contains('modal')) return;
-			tar.style.position = 'absolute';
-			//tar.style.removeProperty('transform');
-			var shiftX = event.clientX - tar.getBoundingClientRect().left;
-			var shiftY = event.clientY - tar.getBoundingClientRect().top;
-			document.onmousemove = function (event) {
-				tar.style.left = event.pageX - shiftX + 'px';
-				tar.style.top = event.pageY - shiftY + 'px';
-				//return false;
-			}
-			tar.onmouseup = function () {
-				document.onmousemove = tar.onmouseup = null;
-			}
-			tar.ondragstart = function () {
-				return false;
-			}
-		}
-	</script>
+        function showMenuLevels() {
+            document.getElementById("moreLevels").hidden = false;
+        }
+    </script>
+    <script>
+        document.onmousedown = function (event) {
+            var tar = event.target;
+            if (tar.id != 'myfoto' && !tar.classList.contains('modal')) return;
+            tar.style.position = 'absolute';
+            //tar.style.removeProperty('transform');
+            var shiftX = event.clientX - tar.getBoundingClientRect().left;
+            var shiftY = event.clientY - tar.getBoundingClientRect().top;
+            document.onmousemove = function (event) {
+                tar.style.left = event.pageX - shiftX + 'px';
+                tar.style.top = event.pageY - shiftY + 'px';
+                //return false;
+            }
+            tar.onmouseup = function () {
+                document.onmousemove = tar.onmouseup = null;
+            }
+            tar.ondragstart = function () {
+                return false;
+            }
+        }
+    </script>
 </head>
+
 <body>
-	<!-- Несколько модальных окон -->
-	<div class="modal" data-modal="1">
-		<!--Связь уровней-->
-		<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>
-		<h2 class="modal__title">Связь уровней</h2>
-		<div class="wrapper exmpl">
-			<img src="styles/img/connect_full.png" style="text-align: center;">
-		</div>
-	</div>
+    <!-- Несколько модальных окон -->
+    <div class="modal" data-modal="1">
+        <!--Связь уровней-->
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <h2 class="modal__title">Связь уровней</h2>
+        <div class="wrapper exmpl">
+            <img src="styles/img/connect_full.png" style="text-align: center;">
+        </div>
+    </div>
 
-	<div class="modal" data-modal="2" id="edit-modal">
-		<!--Форма редактирования-->
-		<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>
-		<h2 class="modal__title">Редактирование элемента</h2>
-		<div id="form">
-			<table style="background-image: url(styles/img/sota.png); background-repeat: no-repeat; background-size: 100% 100%; display: inline-block; font: 20px verdana">
-				<tr>
-					<td colspan="2">Наименование</td>
-					<td colspan="2"><input type="text" id="name" required></td>
-				</tr>
-				<tr>
-					<td colspan="2">LT ячейки</td>
-					<td>L<input type="number" id="LLT" min="-10" max="10" size="2"></td>
-					<td>T<input type="number" id="TLT" min="-10" max="10" size="2"></td>
-				</tr>
-				<tr>
-					<td colspan="2">GK слой</td>
-					<td>G<input type="number" id="GGK" min="-2" max="2" size="2"></td>
-					<td>K<input type="number" id="KGK" min="-2" max="2" size="2"></td>
-				</tr>
-				<tr>
-					<td colspan="2">Обозначение</td>
-					<td colspan="2"><input type="text" id="symbol"></td>
-				</tr>
-				<tr>
-					<td>M<input type="number" id="M" min="-20" max="20" size="2"></td>
-					<td>L<input type="number" id="L" min="-20" max="20" size="2"></td>
-					<td>T<input type="number" id="T" min="-20" max="20" size="2"></td>
-					<td>I<input type="number" id="I" min="-20" max="20" size="2"></td>
-				</tr>
-				<tr>
-					<td colspan="2">ед. измерения полная:</td>
-					<td colspan="2"><input type="text" id="unit_full"></td>
-				</tr>
-				<tr>
-					<td colspan="2">ед. измерения кратко:</td>
-					<td colspan="2"><input type="text" id="unit"></td>
-				</tr>
-				<tr>
-					<td colspan="2"><button class="js-modal-close" onclick="finRedact()" style="color:forestgreen">Редактировать</button></td>
-					<td colspan="2"><button class="js-modal-close" style="color:crimson">Отмена</button></td>
-				</tr>
-			</table>
-			<p id="grechalp">Справка (греческий алфавит):<br />Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω<br /> α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ ς σ τ υ φ χ ψ ω<br />∀ ∁ ∂ ∃ ∄ ∅ ∆ ∇</p>
-			<p>Сначала скопируйте отсюда, затем вставьте в редактируемый текст</p>
-		</div>
-	</div>
+    <div class="modal" data-modal="2" id="edit-modal">
+        <!--Форма редактирования-->
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <h2 class="modal__title">Редактирование элемента</h2>
+        <div id="form">
+            <table
+                style="background-image: url(styles/img/sota.png); background-repeat: no-repeat; background-size: 100% 100%; display: inline-block; font: 20px verdana">
+                <tr>
+                    <td colspan="2">Наименование</td>
+                    <td colspan="2"><input type="text" id="name" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">LT ячейки</td>
+                    <td>L<input type="number" id="LLT" min="-10" max="10" size="2"></td>
+                    <td>T<input type="number" id="TLT" min="-10" max="10" size="2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">GK слой</td>
+                    <td>G<input type="number" id="GGK" min="-2" max="2" size="2"></td>
+                    <td>K<input type="number" id="KGK" min="-2" max="2" size="2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Обозначение</td>
+                    <td colspan="2"><input type="text" id="symbol"></td>
+                </tr>
+                <tr>
+                    <td>M<input type="number" id="M" min="-20" max="20" size="2"></td>
+                    <td>L<input type="number" id="L" min="-20" max="20" size="2"></td>
+                    <td>T<input type="number" id="T" min="-20" max="20" size="2"></td>
+                    <td>I<input type="number" id="I" min="-20" max="20" size="2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">ед. измерения полная:</td>
+                    <td colspan="2"><input type="text" id="unit_full"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">ед. измерения кратко:</td>
+                    <td colspan="2"><input type="text" id="unit"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="js-modal-close" onclick="finRedact()"
+                            style="color:forestgreen">Редактировать</button></td>
+                    <td colspan="2"><button class="js-modal-close" style="color:crimson">Отмена</button></td>
+                </tr>
+            </table>
+            <p id="grechalp">Справка (греческий алфавит):<br />Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω<br /> α β
+                γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ ς σ τ υ φ χ ψ ω<br />∀ ∁ ∂ ∃ ∄ ∅ ∆ ∇</p>
+            <p>Сначала скопируйте отсюда, затем вставьте в редактируемый текст</p>
+        </div>
+    </div>
 
-	<div class="modal" data-modal="3">
-		<!--Окна просмотра скрина-->
-		<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>
-		<h2 class="modal__title">Скриншот</h2>
-		<div class="wrapper exmpl">
-			<div id="output_screen" style="display: block; width: 100%; height: 100%; object-fit: contain "></div>
-		</div>
-		<b>Правая кнопка мыши -> сохранить изображение как</b>
-	</div>
+    <div class="modal" data-modal="3">
+        <!--Окна просмотра скрина-->
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <h2 class="modal__title">Скриншот</h2>
+        <div class="wrapper exmpl">
+            <div id="output_screen" style="display: block; width: 100%; height: 100%; object-fit: contain "></div>
+        </div>
+        <b>Правая кнопка мыши -> сохранить изображение как</b>
+    </div>
 
-	<div class="modal" data-modal="4">
-		<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>
-		<h2 class="modal__title">Авторы</h2>
-		<h3>Автор системы: Чуев Анатолий Степанович <a href="mailto:chuev@mail.ru">chuev@mail.ru</a></h3>
-		<h3 style="text-align:left">Разработчики: поток ИУ6 2021</h3>
-		<table width="300px" border="1" style="table-layout: fixed; width:auto">
-			<tr style="height:40px">
-				<td>Воронин Александр</td>
-				<td>Шатский Артем</td>
-				<td>Барсегян Люба</td>
-				<td>Варняга Максим</td>
-			</tr>
-			<tr style="height:30px">
-				<td><b>Backend/Frontend</b></td>
-				<td><b>Backend-Refactoring</b></td>
-				<td><b>Frontend/Backend</b></td>
-				<td><b>Frontend/Backend</b></td>
-			</tr>
-			<tr style="height:30px">
-				<td><a href="mailto:alvoronin2015@yandex.ru">alvoronin2015@yandex.ru</a></td>
-				<td><a href="mailto:explorer5755@mail.ru">explorer5755@mail.ru</a></td>
-				<td><a href="mailto:lyubahemmo@mail.ru">lyubahemmo@mail.ru</a></td>
-				<td><a href="mailto:v.varmax@yandex.ru">v.varmax@yandex.ru</a></td>
-			</tr>
-		</table>
-		<h5>© Web FViZ, 2023</h5>
-	</div>
+    <div class="modal" data-modal="4">
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <h2 class="modal__title">Авторы</h2>
+        <h3>Автор системы: Чуев Анатолий Степанович <a href="mailto:chuev@mail.ru">chuev@mail.ru</a></h3>
+        <h3 style="text-align:left">Разработчики: поток ИУ6 2021</h3>
+        <table width="300px" border="1" style="table-layout: fixed; width:auto">
+            <tr style="height:40px">
+                <td>Воронин Александр</td>
+                <td>Шатский Артем</td>
+                <td>Барсегян Люба</td>
+                <td>Варняга Максим</td>
+            </tr>
+            <tr style="height:30px">
+                <td><b>Backend/Frontend</b></td>
+                <td><b>Backend-Refactoring</b></td>
+                <td><b>Frontend/Backend</b></td>
+                <td><b>Frontend/Backend</b></td>
+            </tr>
+            <tr style="height:30px">
+                <td><a href="mailto:alvoronin2015@yandex.ru">alvoronin2015@yandex.ru</a></td>
+                <td><a href="mailto:explorer5755@mail.ru">explorer5755@mail.ru</a></td>
+                <td><a href="mailto:lyubahemmo@mail.ru">lyubahemmo@mail.ru</a></td>
+                <td><a href="mailto:v.varmax@yandex.ru">v.varmax@yandex.ru</a></td>
+            </tr>
+        </table>
+        <h5>© Web FViZ, 2023</h5>
+    </div>
 
-	<div class="modal" data-modal="5">
-		<!--Добавление закона-->
-		<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>
-		<h2 class="modal__title">Закон</h2>
-		<input type="text" id="lawName" placeholder="Название закона" size="60" /><br />
-		<select id="lawType">
-			<option value="" hidden>-- Выберите группу закона --</option>
-			<option value="force">Силовые соотношения</option>
-			<option value="mech">Законы механики</option>
-			<option value="magn">Магнитное поле</option>
-			<option value="gravity">Гравитационные законы</option>
-			<option value="electro">Электромагнитные закономерности</option>
-			<option value="kkv">Соотношения ККВ</option>
-		</select>
-		<h4 id="lawConfig"></h4>
-		<h4><i id="lawFormula"></i></h4>
-		<button class="js-modal-close" onclick="addLaw();" style="color:forestgreen" id="addorchangelaw">Добавить</button>
-		<button class="js-modal-close" style="color:crimson">Отмена</button>
-	</div>
+    <div class="modal" data-modal="5">
+        <!--Добавление закона-->
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <h2 class="modal__title">Закон</h2>
+        <input type="text" id="lawName" placeholder="Название закона" size="60" /><br />
+        <select id="lawType">
+            <option value="" hidden>-- Выберите группу закона --</option>
+            <option value="force">Силовые соотношения</option>
+            <option value="mech">Законы механики</option>
+            <option value="magn">Магнитное поле</option>
+            <option value="gravity">Гравитационные законы</option>
+            <option value="electro">Электромагнитные закономерности</option>
+            <option value="kkv">Соотношения ККВ</option>
+        </select>
+        <h4 id="lawConfig"></h4>
+        <h4><i id="lawFormula"></i></h4>
+        <button class="js-modal-close" onclick="addLaw();" style="color:forestgreen"
+            id="addorchangelaw">Добавить</button>
+        <button class="js-modal-close" style="color:crimson">Отмена</button>
+    </div>
 
-	<div class="modal" data-modal="6">
-		<!--Сохраненные законы-->
-		<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>
-		<h2 class="modal__title">Добавленные законы</h2>
-		<div id="laws" style="max-height:500px; overflow-y:scroll"></div>
-	</div>
+    <div class="modal" data-modal="6">
+        <!--Сохраненные законы-->
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <h2 class="modal__title">Добавленные законы</h2>
+        <div id="laws" style="max-height:500px; overflow-y:scroll"></div>
+    </div>
 
-	<!-- Подложка под модальным окном -->
-	<div class="overlay js-overlay-modal"></div>
+    <!-- Подложка под модальным окном -->
+    <div class="overlay js-overlay-modal"></div>
 
-	<ul id="navbar">
-		<li><a href="./main_page.html">Главная</a></li>
-		<li>
-			<a>Файл</a>
-			<ul>
-				<li>
-					<a id="export">Скачать файл</a>
-					<input type="text" id="sota_filenm" placeholder="Название файла" value="" />
-				</li>
-				<li>
-					<a>Открыть файл</a>
-					<input id="import" type="file" accept=".jsota">
-				</li>
-			</ul>
-		</li>
-		<li>
-			<a>Правка</a>
-			<ul>
-				<li><a onclick="undoableCounter.goBack();">↺ - назад</a></li>
-				<li><a onclick="undoableCounter.goForward();">↻ - вперед</a></li>
-			</ul>
-		</li>
-		<li><a class="js-open-modal" data-modal="1">Связь уровней</a></li>
-		<li><a onclick="showLaws();" class="js-open-modal" data-modal="6">Законы</a></li>
-		<li><a class="js-open-modal" data-modal="3" onclick="takeshot()">Скриншот</a></li>
-		<li>
-			<a>Настройки</a>
-			<ul>
-				<li><a onclick="saveValues();">Сохранить локально</a></li>
-				<li><a onclick="reloadValues();">Сбросить все</a></li>
-			</ul>
-		</li>
-		<li><a class="js-open-modal" data-modal="4">Об авторах</a></li>
-	</ul>
+    <ul id="navbar">
+        <li><a href="./main_page.html">Главная</a></li>
+        <li>
+            <a>Файл</a>
+            <ul>
+                <li>
+                    <a id="export">Скачать файл</a>
+                    <input type="text" id="sota_filenm" placeholder="Название файла" value="" />
+                </li>
+                <li>
+                    <a>Открыть файл</a>
+                    <input id="import" type="file" accept=".jsota">
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a>Правка</a>
+            <ul>
+                <li><a onclick="undoableCounter.goBack();">↺ - назад</a></li>
+                <li><a onclick="undoableCounter.goForward();">↻ - вперед</a></li>
+            </ul>
+        </li>
+        <li><a class="js-open-modal" data-modal="1">Связь уровней</a></li>
+        <li><a onclick="showLaws();" class="js-open-modal" data-modal="6">Законы</a></li>
+        <li><a class="js-open-modal" data-modal="3" onclick="takeshot()">Скриншот</a></li>
+        <li>
+            <a>Настройки</a>
+            <ul>
+                <li><a onclick="saveValues();">Сохранить локально</a></li>
+                <li><a onclick="reloadValues();">Сбросить все</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>Поиск</a>
 
-	<div style="height: 2.1vw;"></div>
-	<div style="margin:auto;width: 1500px;">
-		<canvas id="my-canvas" style="position: absolute;"></canvas>
-		<div id="newf" class="font_size" style="justify-content: center;">
+            <ul id="searcher">
+                <li>
+                    <input type="text" id="js-search-input" autocomplete="off" placeholder="Введите название"
+                        value="" />
+                </li>
+                <li>
+                    <div id="js-searched"></div>
+                </li>
+            </ul>
+        </li>
+        <li><a class="js-open-modal" data-modal="4">Об авторах</a></li>
+    </ul>
 
-		</div>
-	</div>
-	<img src="styles/img/connect.png" style="z-index:9" id="myfoto" width="0" height="0">
+    <div style="height: 2.1vw;"></div>
+    <div style="margin:auto;width: 1500px;">
+        <canvas id="my-canvas" style="position: absolute;"></canvas>
+        <div id="newf" class="font_size" style="justify-content: center;">
 
-	<nav id="context-menu" class="context-menu">
-		<ul class="context-menu__items">
-			<li id="l0" class="context-menu__item">
-				<a onclick="showMenuLevels();" class="context-menu__link" data-action="Levels">Уровни ></a>
+        </div>
+    </div>
+    <img src="styles/img/connect.png" style="z-index:9" id="myfoto" width="0" height="0">
 
-			</li>
-			<li id="l1" class="context-menu__item">
-				<a class="context-menu__link js-open-modal" data-action="Edit" data-modal="2" id="l1a">Редактировать</a>
-			</li>
-			<li id="l2" class="context-menu__item">
-				<a class="context-menu__link" data-action="Delete">Удалить</a>
-			</li>
-		</ul>
-		<ul class="gkcontext-menu__items context-menu__items" id="moreLevels" hidden>
-		</ul>
-	</nav>
-	<script src="scripts/utilities.js"></script>
-	<script src="scripts/data.js"></script>
-	<script src="scripts/generatehex.js"></script>
-	<script src="scripts/workWithHexagons.js"></script>
-	<ul id="footer">
-		<li><input type="text" id="outLT" placeholder="LT размерность" disabled /></li>
-		<li><input type="text" id="outGK" placeholder="GK размерность" disabled /></li>
-		<li><a name="sizer" data-size="1">Показать</a></li>
-		<li><a name="sizer" data-size="0">Спрятать</a></li>
-		<li><a class="js-open-modal" data-modal="5" id="lawOpen" style="display:none;">Связь уровней</a></li>
-	</ul>
-	<script type="text/javascript">
-		var img = document.getElementById('myfoto');
-		img.naturalWidth = img.width;
-		img.naturalHeight = img.height;
+    <nav id="context-menu" class="context-menu">
+        <ul class="context-menu__items">
+            <li id="l0" class="context-menu__item">
+                <a onclick="showMenuLevels();" class="context-menu__link" data-action="Levels">Уровни ></a>
 
-		var buttons = document.getElementsByName('sizer');
-		for (var i = 0; i < buttons.length; i++) {
-			buttons[i].onclick = function () {
-				var size = this.getAttribute('data-size');
-				img.width = img.naturalWidth * size;
-				img.height = img.naturalHeight * size;
-			}
-		}
-	</script>
-	<script>
-		window.onbeforeunload = function () {
-			localStorage.setItem('testObject', JSON.stringify(data));
-			return true;
-		};
-	</script>
+            </li>
+            <li id="l1" class="context-menu__item">
+                <a class="context-menu__link js-open-modal" data-action="Edit" data-modal="2" id="l1a">Редактировать</a>
+            </li>
+            <li id="l2" class="context-menu__item">
+                <a class="context-menu__link" data-action="Delete">Удалить</a>
+            </li>
+        </ul>
+        <ul class="gkcontext-menu__items context-menu__items" id="moreLevels" hidden>
+        </ul>
+    </nav>
+    <script src="scripts/utilities.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/generatehex.js"></script>
+    <script src="scripts/workWithHexagons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
+    <script src="scripts/Psearch.js"></script>
+    <ul id="footer">
+        <li><input type="text" id="outLT" placeholder="LT размерность" disabled /></li>
+        <li><input type="text" id="outGK" placeholder="GK размерность" disabled /></li>
+        <li><a name="sizer" data-size="1">Показать</a></li>
+        <li><a name="sizer" data-size="0">Спрятать</a></li>
+        <li><a class="js-open-modal" data-modal="5" id="lawOpen" style="display:none;">Связь уровней</a></li>
+    </ul>
+    <script type="text/javascript">
+        var img = document.getElementById('myfoto');
+        img.naturalWidth = img.width;
+        img.naturalHeight = img.height;
+
+        var buttons = document.getElementsByName('sizer');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = function () {
+                var size = this.getAttribute('data-size');
+                img.width = img.naturalWidth * size;
+                img.height = img.naturalHeight * size;
+            }
+        }
+    </script>
+    <script>
+        window.onbeforeunload = function () {
+            localStorage.setItem('testObject', JSON.stringify(data));
+            return true;
+        };
+    </script>
 </body>
+
 </html>
