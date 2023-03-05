@@ -71,11 +71,9 @@ function find(inputValue) {
     }
   }
 
-  // Сортируем по ревалентности
   let arrays = { arrayR: arrayResults, arrayG: arrayGK, arrayL: arrayLT };
   quickSortAndUpdate(arrays, "arrayR", 0, arrays.arrayR.length - 1);
 
-  // Формируем вывод и выводим
   let str = "";
   for (
     let i = arrayResults.length - 1;
