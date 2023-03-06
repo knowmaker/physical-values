@@ -98,65 +98,6 @@ p {
   font-size: 16px;
 }
 
-.hexagon-item {
-  cursor: pointer;
-  width: 200px;
-  height: 173.20508px;
-  float: left;
-  margin-left: -29px;
-  z-index: 0;
-  position: relative;
-  -webkit-transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
-}
-
-.hexagon-item:first-child {
-  margin-left: 0;
-}
-
-.hexagon-item:hover {
-  z-index: 1;
-}
-
-.hexagon-item:hover .hex-item:last-child {
-  opacity: 1;
-  -webkit-transform: scale(1.3);
-  -moz-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  -o-transform: scale(1.3);
-  transform: scale(1.3);
-}
-
-.hexagon-item:hover .hex-item:first-child {
-  opacity: 1;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-.hexagon-item:hover .hex-item:first-child div:before,
-.hexagon-item:hover .hex-item:first-child div:after {
-  height: 5px;
-}
-
-.hexagon-item:hover .hex-item div::before,
-.hexagon-item:hover .hex-item div::after {
-  background-color: #ff0037;
-}
-
-.hexagon-item:hover .hex-content svg {
-  -webkit-transform: scale(0.97);
-  -moz-transform: scale(0.97);
-  -ms-transform: scale(0.97);
-  -o-transform: scale(0.97);
-  transform: scale(0.97);
-}
-
 .hex-item {
   position: absolute;
   top: 0;
