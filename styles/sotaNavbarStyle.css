@@ -6,18 +6,22 @@
 }
 
 #navbar {
-  height: 2vw;
-  background-color: #666;
   padding-left: 1.7vw;
   min-width: auto;
   width: 100vw;
   position: fixed;
   z-index: 10;
+  height: auto;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  position: fixed;
+  justify-content: center;
+  background-color: var(--navbar-color);
 }
 
 #navbar ul {
   display: none;
-  background-color: #f90;
   position: absolute;
   top: 100%;
 }
@@ -54,14 +58,6 @@
   float: none;
 }
 
-#navbar li:hover {
-  background-color: #f90;
-}
-
-#navbar ul li:hover {
-  background-color: #666;
-}
-
 #footer {
   margin: 0;
   padding: 0;
@@ -70,7 +66,7 @@
   left: 0;
   bottom: 0;
   padding-left: 0.1vw;
-  background-color: #666;
+  background-color: var(--navbar-color);
   height: 2vw;
   z-index: 10;
 }
@@ -108,27 +104,24 @@
   user-select: none;
 }
 
-#footer li:hover {
-  background-color: #f90;
-}
-
 #js-search-input {
-  height: 1.5em;
-  font-size: 1.2em;
+  height: 1.5vw;
+  display: block;
+  font-size: 1vw;
   margin-left: 1vw;
   margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
   border-radius: 0.5vh;
   border: 0;
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
+  padding: 0.3vh 0.5vw 0.3vh 0.5vw;
 }
 #js-search-input:focus-visible {
   outline: 0;
 }
 #js-searched {
   color: aliceblue;
+  font-size: 1.5vh;
   background-color: var(--navbar-color);
   display: none;
   padding-top: 1vh;
@@ -137,34 +130,25 @@
   padding-right: 1vw;
 }
 
-#navbar {
-  height: auto;
-  align-items: center;
-  display: flex;
-  padding: 0;
-  position: fixed;
-  justify-content: center;
-  background-color: var(--navbar-color);
-}
 #js-searched b {
   color: var(--navbar-add-color);
 }
 
 #navbar li:hover,
-#navbar li ul li:hover,
-#footer li:hover {
-  background-color: var(--navbar-add-color);
+#searcher {
+  background-color: var(--navbar-add-color) !important;
 }
-#navbar li ul li,
-#footer {
+#navbar,
+#footer,
+#navbar ul {
   background-color: var(--navbar-color);
 }
 
 #line {
   margin-top: 1vh;
   margin-bottom: 1vh;
-  border-top: 1px solid #444444;
-  border-bottom: 1px solid #444444;
+  border-top: 0.2vh solid #444444;
+  border-bottom: 0.2vh solid #444444;
 }
 .context-menu__link {
   display: block;

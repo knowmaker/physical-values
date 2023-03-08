@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="styles/sotaMainStyle.css">
     <link rel="stylesheet" href="styles/sotaModalStyle.css">
     <link rel="stylesheet" href="styles/sotaNavbarStyle.css">
-    <link rel="stylesheet" href="styles/navbar_footer.css">
-    <link rel="stylesheet" href="styles/int_popup.css">
-    <link rel="stylesheet" href="styles/Pstyles.css">
     <script src="scripts/screen.js"></script>
     <script src="scripts/int_popup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
@@ -41,6 +38,8 @@
             document.onmousemove = function (event) {
                 tar.style.left = event.pageX - shiftX + 'px';
                 tar.style.top = event.pageY - shiftY + 'px';
+                console.log(shiftX);
+                console.log(shiftY);
             }
             tar.onmouseup = function () {
                 document.onmousemove = tar.onmouseup = null;

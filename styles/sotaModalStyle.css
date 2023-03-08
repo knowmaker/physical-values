@@ -17,8 +17,10 @@
   position: fixed;
   top: 30%;
   left: 30%;
-  /*    transform: translate(-50%, -50%);*/
+  /* transform: translate(-50%, -50%); */
   -webkit-touch-callout: none;
+  resize: both;
+  overflow: hidden;
   -webkit-user-select: none;
   user-select: none;
   z-index: 30;
@@ -65,7 +67,6 @@
 .exmpl img {
   height: 100%;
   width: auto;
-  margin-top: -5px;
 }
 
 input {
@@ -102,7 +103,7 @@ pre:hover {
   background-color: white;
 }
 
-.js-modal-close {
+/* .js-modal-close {
   width: 5vw;
   height: 5vh;
-}
+} */

@@ -4,7 +4,7 @@
 }
 
 :root {
-  --navbar-color: rgb(45, 45, 45);
+  --navbar-color: rgb(55, 55, 55);
   --navbar-add-color: rgb(131, 150, 221);
   --color-yellow: rgb(219, 219, 123);
   --color-gray: rgb(194, 197, 200);
@@ -248,8 +248,11 @@ p {
 }
 
 #newf {
-  margin-top: 4vh;
-  /* width: 80vw; */
+  /*!
+  /*! Важно: этому элементу нельзя добавлять margin,
+  /*!        иначе скриншот обрезается 
+  /*/
+  padding-top: 4vh;
 }
 
 .active-hexagon.yellow,
