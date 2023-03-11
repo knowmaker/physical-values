@@ -31,6 +31,7 @@
   background-color: rgba(245, 245, 245, 0.5);
   backdrop-filter: blur(100px);
   border: solid 3px var(--navbar-color);
+  
 }
 
 .modal.active,
@@ -102,6 +103,19 @@ pre:hover {
   object-fit: contain;
   background-color: white;
 }
+
+.level_rel{
+  top: 20%;
+  left: 28%;
+  width: 40vw;
+  height: 40vh;
+}
+
+.level_rel_img{
+  width: 93%;
+  height: 90%;
+}
+
 
 /* .js-modal-close {
   width: 5vw;
