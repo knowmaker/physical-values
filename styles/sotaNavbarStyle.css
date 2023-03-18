@@ -134,6 +134,30 @@
   color: var(--navbar-add-color);
 }
 
+input#sota_filenm {
+  height: 1.5vw;
+  font-size: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  border-radius: 0.5vh;
+  border: 0;
+  padding: 0.3vh 0.5vw 0.3vh 0.5vw;
+  width: calc(100% - 3vw);
+}
+input#sota_filenm:focus-visible {
+  outline: 0;
+}
+
+input#import {
+  font-size: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
 #navbar li:hover,
 #searcher {
   background-color: var(--navbar-add-color) !important;
